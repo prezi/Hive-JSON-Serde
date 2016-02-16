@@ -6,7 +6,6 @@
 package org.openx.data.jsonserde.objectinspector.primitive;
 
 import java.sql.Timestamp;
-import org.apache.hadoop.hive.serde2.io.TimestampWritable;
 
 /**
  *
@@ -29,7 +28,7 @@ public class ParsePrimitiveUtils {
         if (isHex(s)) {
             return Integer.parseInt(s.substring(2), 16);
         } else {
-            return Integer.parseInt(s);
+            return Double.valueOf(s).intValue();
         }
     }
 
@@ -45,7 +44,7 @@ public class ParsePrimitiveUtils {
         if (isHex(s)) {
             return Long.parseLong(s.substring(2), 16);
         } else {
-            return Long.parseLong(s);
+            return Double.valueOf(s).longValue();
         }
     }
 
